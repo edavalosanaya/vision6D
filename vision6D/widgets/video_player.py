@@ -131,7 +131,7 @@ class VideoPlayer(QtWidgets.QDialog):
 
     def play_video(self):
         self.isPlaying = True
-        self.timer.start(self.fps / self.current_playback_speed)
+        self.timer.start(int(self.fps / self.current_playback_speed))
         self.prev_button.setEnabled(False)
         self.next_button.setEnabled(False)
 

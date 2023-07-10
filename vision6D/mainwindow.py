@@ -490,6 +490,7 @@ class MyMainWindow(MainWindow):
         
         self.plotter.add_axes()
         self.plotter.add_camera_orientation_widget()
+        self.plotter.background_color = "black"
 
         self.plotter.show()
         self.show()
