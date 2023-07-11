@@ -88,7 +88,8 @@ class ImageContainer:
             image = self.image_store.render_image(camera=self.plotter.camera.copy())
             output_path, _ = QtWidgets.QFileDialog.getSaveFileName(QtWidgets.QMainWindow(), "Save File", "", "Image Files (*.png)")
             if output_path:
-                if pathlib.Path(output_path).suffix == '': output_path = output_path.parent / (output_path.stem + '.png')
+                output_path = pathlib.Path(output_path)
+                if output_path.suffix == '': output_path = output_path.parent / (output_path.stem + '.png')
                 rendered_image = PIL.Image.fromarray(image)
                 rendered_image.save(output_path)
                 self.output_text.append(f"-> Export image render to:\n {str(output_path)}")
